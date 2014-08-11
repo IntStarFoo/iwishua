@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Cake++"  basedir=".">
+<!--
+    Cake Runner
+    
+    ant task wrapper for netbeans tool menu
+    -->
+
+<target name="list">
+    <exec executable="cake">
+        <arg value="list"/>
+    </exec>
+</target>
+
+<target name="create">
+    <exec executable="cake">
+        <arg value="create"/>
+    </exec>
+</target>
+
+
+</project>

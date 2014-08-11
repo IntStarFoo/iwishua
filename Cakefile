@@ -10,15 +10,15 @@
 #
 # cake utils
 #
+Q = require('q')
 fs = require 'fs'
 util = require 'util'
 {exec} = require 'child_process'
-{nfcall} = require 'q'
-
+{nfcall} = Q
 #
 # Build Source
 #
-task 'build:src', 'Build the coffee app', ->
+task 'build', 'Build the coffee app', ->
 
   start = new Date().getTime()
 
@@ -49,6 +49,5 @@ task 'build:src', 'Build the coffee app', ->
 readVSFiles = (path) ->
   files = fs.readFileSync(path, 'utf8').split('\n')
   file.replace(/^~/, 'iwishua').replace(/\.js$/, '.coffee') for file in files when file isnt '' and file[0...1] isnt '#'
-
 
 
